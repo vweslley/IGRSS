@@ -1,0 +1,37 @@
+<h1 class="page-header">Configuração Site</h1>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <b>Textos do Site</b>
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Sobre</th>
+                        <th>Missão</th>
+                        <th>Visão</th>
+                        <th>Logo</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <%  @controls.each do |control|  %>
+                    <tr>
+                        <td><%=  control.about  %></td>
+                        <td><%=  control.mission  %></td>
+                        <td><%=  control.vision  %></td>
+                        <td><%=  control.logo  %></td>
+                        <td><%= link_to edit_backoffice_control_path(control.id), class:"btn btn-success btn-circle" do %>
+                          <i class="fa fa-edit"></i></td>
+                          <% end %>
+                    </tr>
+                  <% end %>
+                </tbody>
+            </table>
+        </div>
+        <!-- /.table-responsive -->
+    </div>
+    <!-- /.panel-body -->
+</div>
